@@ -7,10 +7,10 @@
 		<artifactId>MicroserviceProject</artifactId>
 		<version>1.0-SNAPSHOT</version>
 	</parent>
-	<groupId>com.microservice</groupId>
-	<artifactId>order-service</artifactId>
+	<groupId>com.microservices</groupId>
+	<artifactId>inventory-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>order-service</name>
+	<name>inventory-com.microservices.inventory.service.service</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
