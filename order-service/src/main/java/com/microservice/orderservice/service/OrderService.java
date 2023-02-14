@@ -22,7 +22,7 @@ import java.util.stream.Collectors;
 @Slf4j
 @Transactional
 public class OrderService {
-    private final WebClient webClient;
+    private final WebClient.Builder webClientBuilder;
     private final OrderRepository orderRepository;
 
     public void placeOrder(OrderRequest orderRequest) {
@@ -38,8 +38,8 @@ public class OrderService {
                 .stream()
                 .map(OrderLineItems::getSkuCode)
                 .collect(Collectors.toList());
-        InventoryResponse[] response = webClient.get()
-                .uri("http://localhost:8080/api/inventory", uriBuilder -> uriBuilder.queryParam("skuCode",orders).build())
+        InventoryResponse[] response = webClientBuilder.build().get()
+                .uri("http://inventory-service/api/inventory", uriBuilder -> uriBuilder.queryParam("skuCode",orders).build())
                 .retrieve()
                 .bodyToMono(InventoryResponse[].class)
                 .block();
