@@ -1,6 +1,6 @@
 package com.microservices.inventory.service.model;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.*;
 
 @Entity
